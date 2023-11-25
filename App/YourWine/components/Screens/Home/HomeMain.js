@@ -19,8 +19,6 @@ import vinho2 from '../../../assets/imgs/vinho2.png';
 import vinho3 from '../../../assets/imgs/vinho3.png';
 import vinho4 from '../../../assets/imgs/vinho4.png';
 
-import MyCarousel from '../Home/MyCarousel';
-
 export default function HomeMain() 
 {
     return (
@@ -34,8 +32,6 @@ export default function HomeMain()
             </View>
 
             <ScrollView style={styles.scrollView}>
-
-                <MyCarousel/>
 
                 <View style={styles2.menuVinhosBa1}>
 

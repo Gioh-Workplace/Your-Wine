@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "YourWine",
-    "slug": "YourWine",
+    "name": "yourwine",
+    "slug": "snack-37b0680b-9f7a-4fff-85e1-64b44f707389",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#691823"
+      "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,11 +20,12 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#691823"
+        "backgroundColor": "#ffffff"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "a1231"
   }
 }
