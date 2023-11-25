@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import Constants from '../../components/Constants/Constants';
+import Constants from '../../components/Components/Constants';
 
 export const styles2 = StyleSheet.create(    
 {
