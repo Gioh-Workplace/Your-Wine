@@ -10,6 +10,8 @@ import { styles2 } from '../../../assets/styles/stylesCart';
 import logo from '../../../assets/imgs/logo.png';
 import nomeDologo from '../../../assets/imgs/logoName.png';
 
+import { buttonStyle} from '../../../assets/styles/stylesButtons';
+
 const Carrinho = ({ route }) => {
  
  const { cart } = useContext(CartContext); 
@@ -54,6 +56,14 @@ const total = cart.reduce((total, item) => total + item.precoPromocao, 0);
           )}
 
           <Text style={styles2.textTop}>Total: R$: {total}</Text>
+
+            <Button
+  title="Comprar"
+      buttonStyle={buttonStyle.buttonStyle}
+                containerStyle={buttonStyle.buttonContainer}
+                titleStyle={buttonStyle.buttonText}
+  onPress={() => setModalVisible(true)}
+  />
        
      </ScrollView>
 
