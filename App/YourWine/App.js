@@ -1,65 +1,62 @@
-import React from 'react';
-
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialCommunityIcons1 from 'react-native-vector-icons/FontAwesome';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+import { CartProvider } from './CartContext';
 
 import HomeMain from './components/screens/home/HomeMain';
+import SearchPage from './components/screens/Pesquisa/Pesquisa';
+import Carrinho from './components/screens/cart/Carrinho'
 
 const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName="Home"
-        tabBarOptions={{
-          activeTintColor: 'tomato',
-          inactiveTintColor: 'gray',
-        }}
-      >
-        <Tab.Screen
-          name="Home"
-          component={HomeMain}
-          options={{
-            tabBarLabel: 'Home',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="home" color={color} size={size} />
-            ),
+    <CartProvider>
+      <NavigationContainer>
+        <Tab.Navigator
+          initialRouteName="Home"
+          tabBarOptions={{
+            activeTintColor: '#691823',
+            inactiveTintColor: 'Red',
           }}
-        />
-        <Tab.Screen
-          name="Favorite"
-          component={HomeMain}
-          options={{
-            tabBarLabel: 'Favorite',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="heart" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Cart"
-          component={HomeMain}
-          options={{
-            tabBarLabel: 'Cart',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="cart" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Car"
-          component={HomeMain}
-          options={{
-            tabBarLabel: 'Car',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="wave" color={color} size={size} />
-            ),
-          }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+        >
+          <Tab.Screen
+            name="Home"
+            component={HomeMain}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons1 name="home" color={color} size={size} />
+              ),
+              headerShown: false,
+            }}
+          />
+          <Tab.Screen
+            name="Search"
+            component={SearchPage}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Ionicons name="search" color={color} size={size} />
+              ),
+              headerShown: false,
+            }}
+          />
+          <Tab.Screen
+            name="Carrinho"
+            component={Carrinho}
+            options={{
+              tabBarLabel: 'Carrinho',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons1 name="shopping-cart" color={color} size={size} />
+              ),
+              headerShown: false,
+            }}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </CartProvider>
   );
 };
 
